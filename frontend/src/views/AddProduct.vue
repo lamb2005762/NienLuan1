@@ -3,7 +3,7 @@
 import toastjs from "../assets/js/toasts";
 import toastsVue from "../components/toasts.vue";
 import ProductService from "../services/Product.service";
-import HeaderShop from "../components/HeaderShop.vue";
+import HeaderShop from "../components/HeaderAdmin.vue";
 import Productform from "../components/Productform.vue";
 export default {
   data(){
@@ -47,7 +47,7 @@ export default {
 <toastsVue></toastsVue>
 	<div class="page">
 		<div>
-			<h4>ADD PRODUCT</h4>
+			<h4 style="text-align: center; margin-top: 20px;">Thêm sản phẩm</h4>
 			<Productform
 				:product="{img:[]}"
         @submit:product="addproduct"

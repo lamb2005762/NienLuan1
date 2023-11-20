@@ -1,4 +1,4 @@
-import {createRouter,createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import ShopView from "@/views/ShopView.vue";
 
 const routes = [
@@ -45,7 +45,12 @@ const routes = [
     {
         path: "/admin",
         name: "admin",
-        component: () => import("@/views/Adminview.vue"),
+        component: () => import("@/views/AdminProduct.vue"),
+    },
+    {
+        path: "/user",
+        name: "user",
+        component: () => import("@/views/AdminUser.vue"),
     },
     {
         path: "/:pathMatch(.*)*",

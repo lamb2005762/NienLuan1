@@ -4,17 +4,22 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <!-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button> -->
+
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://www.thuengay.vn/uploads/770x433/a5ec54b9c789f3820e74144bea13af1311efc89e2.jpg" class="d-block w-100 h-100" alt="...">
+      <img src="https://thaihabooks.com/wp-content/uploads/2021/11/Banner-Thang-11-FB-1.jpg" class="d-block w-100 h-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://bizweb.dktcdn.net/100/445/950/themes/873787/assets/slider_2.jpg?1681879559391" class="d-block w-100 h-100" alt="...">
+      <img src="https://file.hstatic.net/1000328521/file/banner_web_dong_a_danh_nhan_bach_khoa_lich_su_van_hoa_adb6aef6cfea41af9b65c79981fae355.jpg" class="d-block w-100 h-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://vn-live-01.slatic.net/p/d09340cb6a7a9663327d7a5f16839c6f.jpg" class="d-block w-100 h-100" alt="...">
+      <img src="https://newshop.vn/public/uploads/news/nhung-cuon-sach-van-hoc-nhat-ban-dang-mua-nhat-min.jpg" class="d-block w-100 h-100" alt="...">
     </div>
+    <!-- <div class="carousel-item">
+      <img src="https://od.nhungvisao.com/Content/Upload/WebImages/anh2011web.jpg" class="d-block w-100 h-100" alt="...">
+    </div> -->
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -28,6 +33,6 @@
 </template>
 <style scoped>
     .carousel-item{
-        height: 600px;
+        height: 500px;
     }
 </style>

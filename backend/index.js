@@ -7,14 +7,13 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
-//const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 
 dotenv.config();
 
 mongoose
   .connect(process.env.MONGO_URL || "mongodb://127.0.0.1:27017/database")
-  .then(() => console.log("DB Connection Successfull!"))
+  .then(() => console.log("Connection Successfull!"))
   .catch((err) => {
     console.log(err);
   });
@@ -28,8 +27,8 @@ app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 
 app.listen(process.env.PORT || 8000, () => {
-  console.log("Backend server is running!");
+  console.log("Server is running!");
 });
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to contact book application."});
+  res.json({ message: "Welcome to book library application."});
 });

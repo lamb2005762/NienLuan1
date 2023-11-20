@@ -45,101 +45,15 @@
     </div> 
 <div style="margin: 20px 100px;">
     <div style="text-align: center; margin: 30px 0;" class="heading">
-        <h3>Top sản phẩm HOT</h3>
-        <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
-    </div>
-    <div class="flex-row" style="margin:0 100px;">
-        <div class="d-sm-flex flex-wrap" id="ao">
-            <div class="card m-1" style="width: 18rem;"  v-for="item in Products" v-show="item.categories === 'Áo'">
-                <div class="wrapper-img">
-                    <div class="image_slider">
-                        <div class="image_item" v-for="img in item.img">
-                            <img :src="img" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body product">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <h6 class="price">{{item.price}}$</h6>
-                    <router-link :to="{
-                        name: 'details',
-                        params: { id: item._id },
-                    }"  >
-                        <button type="button" class="btn btn-outline-dark">Mua hàng</button>
-                    </router-link>
-                </div>
-            </div>
-        </div> 
+        <h3>Sách mới</h3>
+    </div> 
      <div style="text-align: center; margin: 30px 0;" class="heading">
-        <h3>Top BALO HOT</h3>
-        <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
-    </div>
-        <div class="d-sm-flex flex-wrap" id="balo">
-                 <div class="card m-1" style="width: 18rem;"  v-for="item in Products" v-show="item.categories === 'Balo'">
-                <div class="wrapper-img">
-                    <div class="image_slider">
-                        <div class="image_item" v-for="img in item.img">
-                            <img :src="img" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body product">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <h6 class="price">{{item.price}}$</h6>
-                       <router-link :to="{
-                        name: 'details',
-                        params: { id: item._id },
-                    }">
-                        <button type="button" class="btn btn-outline-dark" @click="nextdetailsproduct">Mua hàng</button>
-                    </router-link>
-                </div>
-            </div>
-        </div> 
+        <h3>Sách bán chạy</h3>
+    </div> 
     <div style="text-align: center; margin: 30px 0;" class="heading">
-        <h3>Top Giày Dép HOT</h3>
-        <h6>Những sản phẩm thời trang mới nhất/Hot nhất</h6>
+        <h3>Sách văn học</h3>
     </div>
-       <div class="d-sm-flex flex-wrap" id="giay">
-               <div class="card m-1" style="width: 18rem;"  v-for="item in Products" v-show="item.categories === 'Giày' || item.categories === 'Dép'">
-                <div class="wrapper-img">
-                    <div class="image_slider">
-                        <div class="image_item" v-for="img in item.img">
-                            <img :src="img" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body product">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <h6 class="price">{{item.price}}$</h6>      
-                       <router-link :to="{
-                        name: 'details',
-                        params: { id: item._id },
-                    }">
-                        <button type="button" class="btn btn-outline-dark" @click="nextdetailsproduct">Mua hàng</button>
-                    </router-link>
-                </div>
-            </div>
-        </div> 
     </div>   
-</div>
 <div>
 </div>
 </template>
-<style scoped>   
-    .wrapper-img{
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    .image_slider{
-       display: flex;
-       transition: all .8s ease;
-       
-    }
-    .image_slider:hover{ 
-       transform: translateX(-100%);
-    }
-   .image_item{
-       flex: 1 0 100%;
-   }
-</style>

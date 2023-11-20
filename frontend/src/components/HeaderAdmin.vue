@@ -82,99 +82,26 @@ import toast from '../assets/js/toasts';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-          <router-link to="/" class="nav-link" aria-current="page">
-            Trang Chủ
+          <router-link to="/admin" class="nav-link" aria-current="page">
+            Sản phẩm
           </router-link>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Hàng đầu
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#vanhoc">Sách mới</a></li>
-            <li><a class="dropdown-item" href="#vanhoc">Sách bán chạy</a></li>
-          </ul>
+        <li class="nav-item">
+          <router-link to="/user" class="nav-link" aria-current="page">
+            Người dùng
+          </router-link>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Văn học 
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#vanhoc">Văn học Việt Nam</a></li>
-            <li><a class="dropdown-item" href="#vanhoc">Văn học Nước Ngoài</a></li>
-          </ul>
+        <li class="nav-item">
+          <router-link to="/" class="nav-link" aria-current="page">
+            Đơn hàng
+          </router-link>
         </li>
-           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Xã hội
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Lịch sử</a></li>
-            <li><a class="dropdown-item" href="#">Triết học</a></li>
-            <li><a class="dropdown-item" href="#">Tâm lý học</a></li>
-            <li><a class="dropdown-item" href="#">Kinh tế</a></li>
-          </ul>
-        </li>
-           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Tự nhiên
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#toan">Toán học</a></li>
-            <li><a class="dropdown-item" href="#ly">Vật lý</a></li>
-            <li><a class="dropdown-item" href="#hoa">Hóa học</a></li>
-            <li><a class="dropdown-item" href="#sinh">Sinh học</a></li>
-            <li><a class="dropdown-item" href="#thienvan">Thiên văn học</a></li>
-          </ul>
-        </li>
+           
       </ul>  
-      <form class="d-flex flex-mb">
-        <input class="form-control me-2 hiden" id="input_search" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-light" type="button" @click="slideSearch()"><i class="bi bi-search icon"></i></button>
-      </form>
-      
-       <div class="Cart">
-         <div class="wrapper_cart">
-             <div class="cart_link" id="cart_link">
-                <div class="card card-body bg-dark cart-info"> 
-                    <div class="cart-list">
-                        <h4 class="text-light">Shopping Cart</h4>
-                         <router-link to="/cart" style="text-decoration: none;">
-                        <div class="item_cart" v-for="item in carts">
-                            <div class="item-img">
-                                <img :src="item.img" class="img-product" alt="">
-                            </div>
-                            <div class="item-name">
-                                <span class="text-light name-product">{{item.title}}</span>
-                            </div>
-                            <div class="item-price">
-                                <span class="text-light price-product">{{item.price}}$</span>
-                            </div>
-                            <div class="item-quantity">
-                                <span class="text-light quantity-product">x{{item.quantity}}</span>
-                            </div>
-                        </div>   
-                         </router-link>          
-                  </div>
-                  <div class="footer-cart">
-                          <span class="text-light">Có <span class="lenghtCart">{{getlengthcarts }}</span> sản phẩm trong giỏ hàng  </span>
-                          <button class="btn btn-light" type="button" @click="gotocart">Vào giỏ hàng</button>
-                  </div>
-            </div>
-          </div>
-           <i class="bi bi-bag-fill icon icon_cart"></i>
-           <span class="quantity_cart">{{getlengthcarts}}</span>
-         </div>
-      </div>  
-
         <div class="User">
           <div class="not-login">
             <i class="bi bi-person-circle icon" data-bs-toggle="collapse" href="#user"></i>
               <div class="collapse user_link" id="user">
-                <div class="card card-body bg-light connect-shop">
-                  <router-link to="/login" class="text-dark">Đăng nhập</router-link>
-                   <router-link to="/logup" class="text-dark">Đăng ký</router-link>
-                </div>        
             </div>
           </div>
              <div class="login">
