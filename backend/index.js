@@ -26,7 +26,7 @@ app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running!");
 });
 app.get("/", (req, res) => {

@@ -43,6 +43,21 @@ const routes = [
         component: () => import("@/views/UserProfile.vue"),
     },
     {
+        path: "/sachmoi",
+        name: "sachmoi",
+        component: () => import("@/views/NewBook.vue"),
+    },
+    {
+        path: "/banchay",
+        name: "banchay",
+        component: () => import("@/views/BestSell.vue"),
+    },
+    {
+        path: "/foreign",
+        name: "foreign",
+        component: () => import("@/views/ForeignBook.vue"),
+    },
+    {
         path: "/admin",
         name: "admin",
         component: () => import("@/views/AdminProduct.vue"),

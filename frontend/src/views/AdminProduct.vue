@@ -46,6 +46,10 @@ export default {
                 this.toastjs();
             }
         },
+        formatPrice(price) {
+            const formattedPrice = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+            return formattedPrice;
+        },
     },
     created() {
         this.getall();
@@ -60,6 +64,9 @@ export default {
             <div class="list_products">
                 <div style="margin-bottom: 5%;">
                     <h4>Danh Sách Sản Phẩm</h4>
+                    <router-link to="/addproduct">
+                        <button class="btn btn-primary" style="margin: 10px;">Thêm Sản phẩm</button>
+                    </router-link>
                 </div>
                 <table class="table table-bordered">
                     <thead>
@@ -80,7 +87,7 @@ export default {
                                 <img :src="product.img" alt="Product Image" style="max-width: 50px; max-height: 50px;">
                             </td>
                             <td>{{ product.categories }}</td>
-                            <td>{{ product.price }}</td>
+                            <td>{{ formatPrice(product.price) }}</td>
                             <td>
                                 <router-link :to="{ name: 'editproduct', params: { id: product._id } }">
                                     <span class="badge bg-warning text-dark">
@@ -95,9 +102,6 @@ export default {
                         </tr>
                     </tbody>
                 </table>
-                <router-link to="/addproduct">
-                    <button class="btn btn-primary" style="margin: 10px;">Thêm Sản phẩm</button>
-                </router-link>
             </div>
         </div>
     </div>

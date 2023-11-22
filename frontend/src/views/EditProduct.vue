@@ -1,5 +1,5 @@
 <template>
-    <HeaderShop></HeaderShop>
+    <HeaderAdmin></HeaderAdmin>
     <toastsVue></toastsVue>
     <div v-if="product" class="page">
         <h4 style="text-align: center; margin-top: 20px;">Cập nhật sản phẩm</h4>
@@ -11,8 +11,8 @@
 import toastjs from "../assets/js/toasts";
 import toastsVue from "../components/toasts.vue";
 import ProductService from "../services/Product.service";
-import HeaderShop from "../components/HeaderShop.vue";
 import Productform from "../components/Productform.vue";
+import HeaderAdmin from "../components/HeaderAdmin.vue";
 export default {
     data() {
         return {
@@ -26,10 +26,10 @@ export default {
         }
     },
     components: {
-        HeaderShop,
-        Productform,
-        toastsVue
-    },
+    Productform,
+    toastsVue,
+    HeaderAdmin
+},
     methods: {
         toastjs,
         async getproduct(id) {

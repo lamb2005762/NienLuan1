@@ -43,7 +43,7 @@
             async handleLogin(user) {
               try {
                 await this.login(user);
-                location.href='http://localhost:8001/';
+                location.href='http://localhost:3001/';
               } catch (error) {
                 this.toast();
                 console.log(error);
