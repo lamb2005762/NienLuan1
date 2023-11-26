@@ -73,6 +73,9 @@ export default {
                             <th scope="col">Tên đăng nhập</th>
                             <th scope="col">Email</th>
                             <th scope="col">Xóa</th>
+                            <th scope="col">Xóa</th>
+                            <th scope="col">Xóa</th>
+                            <th scope="col">Xóa</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,6 +88,9 @@ export default {
                                     <i class="bi bi-trash"></i>
                                 </span>
                             </td>
+                            <td>{{ user.fullName }}</td>
+                            <td>{{ user.phoneNumber }}</td>
+                            <td>{{ user.address }}</td>
                         </tr>
                     </tbody>
                 </table>

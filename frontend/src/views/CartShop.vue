@@ -103,20 +103,23 @@ export default {
                   <div class="p-5">
                     <h3 class="fw-bold mb-5 mt-2 pt-1">Đơn hàng</h3>
                     <hr class="my-4">
+                    <h5>Phương thức thanh toán</h5>
 
                     <div class="mb-4 pb-2">
-                      <label for="fullName" class="form-label">Họ và tên</label>
-                      <input type="text" id="fullName" class="form-control" required>
+                      <select class="select">
+                        <option value="1">Thanh toán khi nhận hàng</option>
+                        <option value="2">Ví ShopeePay </option>
+                        <option value="3">Ví ZaloPay</option>
+                      </select>
                     </div>
 
-                    <div class="mb-4 pb-2">
-                      <label for="phoneNumber" class="form-label">Số điện thoại</label>
-                      <input type="tel" id="phoneNumber" class="form-control" required>
-                    </div>
+                    <h5>Khung giờ nhận hàng</h5>
 
                     <div class="mb-4 pb-2">
-                      <label for="address" class="form-label">Địa chỉ giao hàng</label>
-                      <textarea id="address" class="form-control" required></textarea>
+                      <select class="select">
+                        <option value="1">Giờ hành chính</option>
+                        <option value="2">Bất kỳ</option>
+                      </select>
                     </div>
                     <div v-if="carts.length > 0" class="text-end">
                       <h4>Tổng cộng: {{ total() }}</h4>

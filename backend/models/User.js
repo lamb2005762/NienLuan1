@@ -9,6 +9,9 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    fullName: { type: String, required: true },
+    phoneNumber: { type: String, required: true },
+    address: { type: Object, required: true },
   },
   { timestamps: true }
 );
