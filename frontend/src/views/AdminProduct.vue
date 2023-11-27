@@ -1,5 +1,5 @@
 <script>
-import HeaderAdmin from "../components/HeaderAdmin.vue"
+import HeaderAdmin from "../components/HeaderAdmin.vue";
 import toastsVue from "../components/toasts.vue";
 import ProductService from "../services/Product.service";
 import toast from "../assets/js/toasts";

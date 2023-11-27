@@ -69,9 +69,7 @@ export default {
             this.toasts.type = "success";
             this.toasts.duration = 2000;
             this.toastsjs();
-            // Xóa dữ liệu giỏ hàng sau khi đặt
             this.carts = [];
-            localStorage.removeItem('carts');
           } else {
             // Xử lý khi đặt hàng không thành công
             this.toasts.title = "Failed";
@@ -100,17 +98,7 @@ export default {
     },
   },
   created() {
-    // Xóa dữ liệu giỏ hàng từ local storage khi tải trang
-    localStorage.removeItem('carts');
-
-    // Nếu có dữ liệu giỏ hàng trong local storage, hãy lấy nó
-    const storedCarts = localStorage.getItem('carts');
-    if (storedCarts) {
-      this.carts = JSON.parse(storedCarts);
-    } else {
-      // Chỉ gọi API để lấy danh sách sản phẩm khi không có dữ liệu trong local storage
-      this.refeshlistcart();
-    }
+    this.refeshlistcart();
   },
 }
 </script>

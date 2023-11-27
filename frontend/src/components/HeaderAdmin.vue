@@ -92,7 +92,7 @@ import toast from '../assets/js/toasts';
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/" class="nav-link" aria-current="page">
+          <router-link to="/order" class="nav-link" aria-current="page">
             Đơn hàng
           </router-link>
         </li>

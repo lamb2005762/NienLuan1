@@ -9,7 +9,7 @@ const OrderSchema = new mongoose.Schema(
       type: Number,
       default: 1,
     },
-    status: { type: String, default: "pending" },
+    status: { type: String, default: "Chờ xác nhận" },
   },
   { timestamps: true }
 );
