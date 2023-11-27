@@ -7,6 +7,7 @@ const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
+//const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 
 dotenv.config();
@@ -26,9 +27,10 @@ app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 
+
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running!");
 });
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to book library application."});
+  res.json({ message: "Welcome to book library application." });
 });

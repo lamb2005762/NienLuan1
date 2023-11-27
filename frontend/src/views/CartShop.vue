@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import HeaderShop from '@/components/HeaderShop.vue';
 import CartService from '../services/Cart.service';
 import toastsVue from '../components/toasts.vue';
@@ -26,6 +27,7 @@ export default {
       const user = JSON.parse(localStorage.getItem("user"));
       return user._id;
     },
+
     async getcarts() {
       try {
         this.carts = await CartService.get(this.getiduser());
@@ -33,6 +35,7 @@ export default {
         console.log(error);
       }
     },
+
     async delcart(index) {
       this.toasts.title = "Deleted",
         this.toasts.msg = "Đã xóa sản phẩm",
@@ -43,24 +46,46 @@ export default {
       this.refeshlistcart();
     },
     toastsjs,
+
     refeshlistcart() {
       this.getcarts();
     },
-    registerproduct() {
+
+    async registerproduct() {
       if (this.carts.length > 0) {
-        this.toasts.title = "Success",
-          this.toasts.msg = "Đã thành toán",
-          this.toasts.type = "success",
-          this.toasts.duration = 2000,
-          this.toastsjs();
-      } else {
-        this.toasts.title = "Failed",
-          this.toasts.msg = "Bạn chưa có sản phẩm",
-          this.toasts.type = "error",
-          this.toasts.duration = 2000,
-          this.toastsjs();
+        try {
+          // Chuẩn bị dữ liệu đơn hàng
+          const orderData = {
+            userId: this.getiduser(),
+            products: this.carts,
+          };
+
+          // Gọi API endpoint để lưu đơn hàng vào cơ sở dữ liệu
+          const response = await axios.post('/api/orders', orderData);
+
+          if (response.status === 200) {
+            this.toasts.title = "Success";
+            this.toasts.msg = "Đã đặt hàng thành công";
+            this.toasts.type = "success";
+            this.toasts.duration = 2000;
+            this.toastsjs();
+            // Xóa dữ liệu giỏ hàng sau khi đặt
+            this.carts = [];
+            localStorage.removeItem('carts');
+          } else {
+            // Xử lý khi đặt hàng không thành công
+            this.toasts.title = "Failed";
+            this.toasts.msg = "Đặt hàng không thành công";
+            this.toasts.type = "error";
+            this.toasts.duration = 2000;
+            this.toastsjs();
+          }
+        } catch (error) {
+          console.error('Lỗi khi đặt hàng:', error);
+        }
       }
     },
+
     total() {
       var total = 0;
       for (var i in this.carts) {
@@ -75,7 +100,17 @@ export default {
     },
   },
   created() {
-    this.refeshlistcart();
+    // Xóa dữ liệu giỏ hàng từ local storage khi tải trang
+    localStorage.removeItem('carts');
+
+    // Nếu có dữ liệu giỏ hàng trong local storage, hãy lấy nó
+    const storedCarts = localStorage.getItem('carts');
+    if (storedCarts) {
+      this.carts = JSON.parse(storedCarts);
+    } else {
+      // Chỉ gọi API để lấy danh sách sản phẩm khi không có dữ liệu trong local storage
+      this.refeshlistcart();
+    }
   },
 }
 </script>

@@ -9,7 +9,6 @@ const OrderSchema = new mongoose.Schema(
       type: Number,
       default: 1,
     },
-    address: { type: Object, required: true },
     status: { type: String, default: "pending" },
   },
   { timestamps: true }
