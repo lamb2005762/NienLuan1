@@ -97,7 +97,7 @@ export default {
             const formattedPrice = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
             return formattedPrice;
         },
-        // mới
+
         decreaseQuantity: function () {
             if (this.sub_quantity > 1) {
                 this.sub_quantity--;
@@ -127,8 +127,18 @@ export default {
         </div>
         <div class="wrapper">
             <div class="row">
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <img :src="detailproduct.img" alt="Product Image" class="img-fluid">
+                </div> -->
+                <div class="img_product col">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" v-for="(img, index) in detailproduct.img"
+                                :class="{ active: index == 0 }">
+                                <img :src="img" class="d-block w-100" alt="..." style="border-radius: 8px ;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="info_product">
@@ -149,7 +159,8 @@ export default {
                             </div>
                         </div>
                         <div class="btn_product" style="margin-top: 10px;">
-                            <button type="submit" class="btn btn-danger" style="width:50%;" @click="getidcart()">Thêm vào giỏ hàng</button>
+                            <button type="submit" class="btn btn-danger" style="width:50%;" @click="getidcart()">Thêmvào
+                                giỏ hàng</button>
                             <router-link to="/">
                                 <button type="button" class="btn btn-danger" style="width:100px;">Trở về</button>
                             </router-link>
@@ -173,8 +184,15 @@ export default {
                 <div class="col-4 product" v-for="(item, index) in Products" :key="item.id">
                     <template v-if="index < 6">
                         <div class="card m-1" style="width: 18rem; height: 100%;">
-                            <div>
+                            <!-- <div>
                                 <img :src="item.img" alt="Product Image" class="d-block">
+                            </div> -->
+                            <div class="wrapper-img">
+                                <div class="image_slider">
+                                    <div class="image_item" v-for="img in item.img">
+                                        <img :src="item.img" alt="Product Image" class="d-block">
+                                    </div>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ item.title }}</h5>
@@ -191,7 +209,7 @@ export default {
         </div>
     </div>
 </template>
-  
+
 <style scoped>
 .btn_product {
     display: flex;
@@ -271,5 +289,11 @@ export default {
 
 .card-title {
     flex-grow: 1;
+}
+
+.wrapper-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 </style>

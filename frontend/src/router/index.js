@@ -53,9 +53,9 @@ const routes = [
         component: () => import("@/views/BestSell.vue"),
     },
     {
-        path: "/foreign",
-        name: "foreign",
-        component: () => import("@/views/ForeignBook.vue"),
+        path: "/english",
+        name: "english",
+        component: () => import("@/views/EnglishBook.vue"),
     },
     {
         path: "/admin",

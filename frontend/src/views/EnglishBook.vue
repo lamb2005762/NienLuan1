@@ -36,11 +36,11 @@ export default {
     <HeaderShop></HeaderShop>
     <toastsVue></toastsVue>
     <div style="text-align: center; margin: 30px 0;" class="heading">
-        <h1>Tất cả sách văn học nước ngoài</h1>
+        <h1>Tất cả sách tiếng Anh</h1>
     </div>
     <div class="flex-row">
         <div class="product-container" id="vnnn">
-            <div class="col-4 product" v-for="item in Products" v-show="item.categories === 'Văn học nước ngoài'">
+            <div class="col-4 product" v-for="item in Products" v-show="item.categories === 'English'">
                 <div class="card m-1" style="width: 18rem; height: 100%;">
                     <div>
                         <img :src="item.img" alt="Product Image" class="d-block">

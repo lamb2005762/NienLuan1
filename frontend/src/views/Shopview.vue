@@ -21,13 +21,13 @@ export default {
             currentUser: "user",
         }),
         newProducts() {
-            return this.Products.filter(item => item.categories === 'Mới').slice(0, 6);
+            return this.Products.filter(item => item.categories === 'New').slice(0, 6);
         },
         bestProducts() {
-            return this.Products.filter(item => item.categories === 'Bán chạy').slice(0, 6);
+            return this.Products.filter(item => item.categories === 'Best').slice(0, 6);
         },
         foreignProducts() {
-            return this.Products.filter(item => item.categories === 'Văn học nước ngoài').slice(0, 6);
+            return this.Products.filter(item => item.categories === 'English').slice(0, 6);
         },
     },
     methods: {
@@ -113,7 +113,7 @@ export default {
         </router-link>
     </h3>
     <div style="text-align: center; margin: 30px 0;" class="heading">
-        <h1>Văn học nước ngoài</h1>
+        <h1>Sách tiếng anh</h1>
     </div>
     <div class="flex-row">
         <div class="product-container" id="vnnn">
@@ -156,6 +156,7 @@ export default {
 
 .product {
     width: calc(33.33% - 20px);
+    /* Đảm bảo 3 card trên mỗi hàng */
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -165,7 +166,9 @@ export default {
 .product img {
     display: block;
     width: 100%;
-    height: auto;
+    /* Đảm bảo ảnh chiếm toàn bộ phần tử cha */
+    height: 300px;
+    /* Đặt chiều cao cố định cho ảnh */
     object-fit: cover;
 }
 
